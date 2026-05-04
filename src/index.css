@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-300 font-sans antialiased selection:bg-blue-500/30 selection:text-blue-200 overflow-x-hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans;
+  }
+}
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-400;
+  }
+  .section-container {
+    @apply max-w-6xl mx-auto px-6 py-24 md:py-32 relative;
+  }
+  .line-numbers {
+    @apply absolute left-0 top-0 bottom-0 w-12 border-r border-white/5 hidden md:flex flex-col items-center py-24 text-slate-700 font-mono text-xs select-none;
+  }
+}
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-slate-950;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-800 rounded-full border-2 border-slate-950;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-700;
+}
